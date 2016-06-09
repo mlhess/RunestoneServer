@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Case</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <!-- Begin navbar -->
+    <div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+      <div class="container">
+
+        <div class="navbar-header">
+          <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+          <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <div>
+            <a class="brand-logo" style='background: transparent url("{{=URL('static', 'images/logo_small.png')}}") no-repeat 0px 0px;' href="{{=URL('default', 'user/login')}}">&nbsp; </a>
+            <a class="navbar-brand" href="/">Runestone Interactive</a>
+          </div>
+        </div>
+
+        <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+          <ul class="nav navbar-nav navbar-right">
+
+            <li class="divider-vertical"></li>
+
+            <!-- social media dropdown -->
+            <li class="dropdown">
+              <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+              </a>
+              <ul class="dropdown-menu social-menu">
+                  <li>
+                    <div>
+                      <b>Runestone in social media:</b>
+                    </div>
+                    <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                    <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+                  </li>
+
+                  <li class="divider"></li>
+                  <li>
+                    <div>
+                      <b>Help support us:</b>
+                    </div>
+                      <div>
+                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                      <input type="hidden" name="cmd" value="_s-xclick">
+                      <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+                      ">
+                      <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                      <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                      </form>
+
+                    </div>
+                  </li>
+              </ul>
+            </li>
+            <!-- end social media dropdown -->
+
+            <li class="divider-vertical"></li>
+
+            <!-- user account dropdown -->
+            <li class="dropdown">
+              <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+              </a>
+              <ul class="dropdown-menu user-menu">
+                {{ if auth.user: }}
+                  <li><span class='loggedinuser'>{{=auth.user.email}}</span></li>
+                {{ else: }}
+                  <li><span class='loggedinuser'>Not logged in</span></li>
+                {{ pass }}
+                <li class="divider"></li>
+                <li><a href='/{{=request.application}}/mygroup/schedule'>Group Schedule</a></li>
+                <li><a href='/{{=request.application}}/mygroup/newschedule'>Schedule New Chapter</a></li>
+                <li><a href='/{{=request.application}}/mygroup/manageGroup'>Manage Group</a></li>
+                <li class="divider"></li>
+                <li><a href='/{{=request.application}}/admin/index'>Instructor's Page</a></li>
+                <li class="divider"></li>
+                {{ if auth.user: }}
+                  <li><a href="/{{=request.application}}/default/user/profile">Edit Profile</a>
+                  <li><a href="/{{=request.application}}/default/user/change_password">Change Password</a>
+                  <li><a href='{{=URL('assignments','index')}}'>Progress Page</a></li>
+                  <li class='loginout'><a href='{{=URL("default", "user/logout")}}'>Log Out</a></li>
+                {{ else: }}
+                  <li><a href='{{=URL("default", "user/register")}}'>Register</a></li>
+                  <li class='loginout'><a href='{{=URL("default", "user/login")}}'>Login</a></li>
+                {{ pass }}
+              </ul>
+            </li>
+            <!-- end user account dropdown -->
+
+            <li class="divider-vertical"></li>
+
+            <!-- help menu dropdown -->
+            <li class="dropdown">
+              <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+              </a>
+              <ul class="dropdown-menu user-menu">
+
+                <li><a href='/{{=request.application}}/static/overview/instructor.html'>Help for Instructors</a></li>
+                <li class="divider"></li>
+                <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+                <li><a href='/{{=request.application}}/static/help/bugreports.html'>Report A Problem</a></li>
+              </ul>
+            </li>
+
+            <li class="divider-vertical"></li>
+
+          </ul>
+
+          <ul class="nav navbar-nav">
+
+            <li class="divider-vertical"></li>
+
+            <!-- open library dropdown -->
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Book Links<b class="caret"></b></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="/{{=request.application}}/static/thinkcspy/index.html">How To Think Like a Computer Scientist</a></li>
+                <li><a href="/{{=request.application}}/static/pythonds/index.html">Problem Solving With Algorithms and Data Structures</a></li>
+                <li><a href="/{{=request.application}}/static/java4python/index.html">Java For Python Programmers</a></li>
+                <li><a href="/{{=request.application}}/static/JavaReview/index.html">Java Review for AP CS A Exam</a></li>
+                <li><a href="/{{=request.application}}/static/StudentCSP/index.html">CS Principles: Big Ideas inProgramming</a></li>
+                <li><a href="/{{=request.application}}/static/pip/index.html">Programs, Information, People version 1</a></li>
+                <li><a href="/{{=request.application}}/static/pip2/index.html">Programs, Information, People version 2</a></li>
+                <li><a href="http://everydaypython.org">Everyday Python Blog</a></li>
+              </ul>
+            </li>
+
+            <li class="divider-vertical"></li>
+
+
+
+            <li class="divider-vertical"></li>
+
+          </ul>
+
+        </div>
+      </div>
+
+    </div>
+
+
+<div class="container" style="margin-top: 60px;">
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#progress">Student Progress</a></li>
+    <li><a data-toggle="tab" href="#grade">Grade</a></li>
+    <li><a data-toggle="tab" href="#menu2">Manage Assignments</a></li>
+    <li><a data-toggle="tab" href="#menu3">Manage Courses</a></li>
+    <li><a data-toggle="tab" href="#menu4">HOWTO</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="progress" class="tab-pane fade in active">
+      <h3>HOME</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+
+    <div id="grade" class="tab-pane fade" style="margin-top: 30px;">
+
+    <div class="col-md-2">
+            <div class="list-group">
+                <a href="#" class="list-group-item">
+                    <select class="form-control" id="sel1">
+                      <option>Assignment</option>
+                      <option>Activity</option>
+                      <option>Student</option>
+                    </select>
+                </a>
+                <a href="#" class="list-group-item">
+                    <select size=10 class="form-control" id="sel2">
+                      <option>recursion 1</option>
+                      <option>recursion 2</option>
+                      <option>recursion 3</option>
+                      <option>recursion 4</option>
+                      <option>recursion 5</option>
+                      <option>recursion 6</option>
+                      <option>recursion 7</option>
+                      <option>recursion 8</option>
+                      <option>recursion 9</option>
+                      <option>recursion 10</option>
+                      <option>advanced 1</option>
+                      <option>advanced 2</option>
+                      <option>advanced 3</option>
+                    </select>
+                </a>
+            </div>
+
+            <button class="btn btn-success">Auto Grade</button>
+        </div>
+
+
+    <div class="col-md-2">
+            <div class="list-group">
+                <a href="#" class="list-group-item">
+                    <select class="form-control" id="sel1">
+                      <option>Activity</option>
+                      <option>Student</option>
+                    </select>
+                </a>
+
+                <a href="#" class="list-group-item">
+                    <select size=10 class="form-control list-group-item-text" id="sel2">
+                      <option class="list-group-item-text">ex_3_5</option>
+                      <option>ex_5_4</option>
+                      <option>ex_5_10</option>
+                      <option>ex_9_1</option>
+                      <option>ex_9_2</option>
+                      <option>ex_11_14</option>
+                    </select>
+
+                </a>
+            </div>
+    </div>
+
+
+    <div class="col-md-2">
+            <div class="list-group">
+                <a href="#" class="list-group-item">
+                    <h4 class="list-group-item-heading">Student</h4>
+                </a>
+
+                <a href="#" class="list-group-item">
+                    <select size=10 class="form-control" id="sel2">
+                      <option class="list-group-item-text">Jean</option>
+                      <option>Mark</option>
+                      <option>Barb</option>
+                      <option>Kyle</option>
+                      <option>Devin</option>
+                      <option>Jackie</option>
+                    </select>
+                </a>
+            </div>
+    </div>
+    <div class="col-md-6" style="border-left: solid black 1px;">
+        <div class="form-group">
+          <label for="solution">Solution</label>
+          <textarea class="form-control" rows="5" id="solution"></textarea>
+
+        <pre style="margin-top: 10px;">
+            Hello World
+        </pre >
+        <button class="btn btn-success">Run</button>
+        </div>
+
+        <div class="form-group">
+          <label for="comment">Comment:</label>
+          <textarea class="form-control" rows="5" id="comment"></textarea>
+        </div>
+
+        <div class="form-inline">
+            <button class="btn btn-success">Save / Next</button>
+        <label for="usr">Grade:</label>
+        <input type="text" class="form-control" id="usr" width="10">
+        </div>
+    </div>
+
+    </div>
+
+
+    <div id="menu2" class="tab-pane fade">
+      <h3>Menu 2</h3>
+      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+    </div>
+    <div id="menu3" class="tab-pane fade">
+      <h3>Menu 3</h3>
+      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
