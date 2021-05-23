@@ -8,7 +8,7 @@
 
 <div id='part1'>
     <h1 id="assignment_name" style='text-align:center'>{{=assignment['name']}}</h1>
-    <h2 style='margin-left:1cm;'>Due: {{=assignment['duedate']}}</h2>
+    <h2 id="assignment_duedate" style='margin-left:1cm;'>Due: {{=assignment['duedate']}}</h2>
     <span style="float:right; margin-right:1cm;">
         {{if assignment['points'] > 0:}}
             {{='Score: {} of {} = {:2.1f}%'.format(questions_score + readings_score, assignment['points'], 100*(questions_score + readings_score)/assignment['points'])}}
